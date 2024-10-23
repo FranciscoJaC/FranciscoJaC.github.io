@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Adivinanza</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Menú de inicio -->
+    <div class="container" id="menu">
+        <h1>Juego de Adivinar el Número</h1>
+        <label for="difficulty">Selecciona Dificultad:</label>
+        <select id="difficulty">
+            <option value="easy">Fácil (1-50)</option>
+            <option value="medium">Medio (1-100)</option>
+            <option value="hard">Difícil (1-200)</option>
+            <option value="savage">INSANO (1-1000)</option>
+        </select>
+        <button id="startButton">Iniciar Juego</button>
+    
+        <h2>Instrucciones:</h2>
+        <p>Intenta adivinar el número secreto entre el rango seleccionado.</p>
+        <p>Tienes 5 intentos para acertar.</p>
+        <p>Después de cada intento, recibirás una pista:</p>
+        <ul>
+            <li>Si tu número es menor, se te dirá "El número es mayor".</li>
+            <li>Si tu número es mayor, se te dirá "El número es menor".</li>
+            <li>Si adivinas correctamente, ¡felicitaciones!</li>
+        </ul>
+    </div>
+
+    <!-- Contenedor del juego -->
+    <div class="container" style="display: none;" id="gameContainer">
+        <h1>Adivina el Número</h1>
+
+        <input type="number" id="guessInput" min="1" max="100" placeholder="Tu número">
+        <button id="guessButton">Adivinar</button>
+
+        <p id="resultMessage"></p>
+
+        <!-- Contenedor de corazones como iconos -->
+        <div id="heartContainer">
+            <span class="heart" id="heart1">♥</span>
+            <span class="heart" id="heart2">♥</span>
+            <span class="heart" id="heart3">♥</span>
+            <span class="heart" id="heart4">♥</span>
+            <span class="heart" id="heart5">♥</span>
+        </div>
+    </div>
+
+    <!-- Botón de reinicio fuera del contenedor -->
+    <button id="resetButton" style="display: none;">Reiniciar juego</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
